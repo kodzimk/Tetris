@@ -19,14 +19,10 @@ void Tetris::update()
 		{
 			game->update();
 			game->render();
-			if (game->changeState() == 1)
+			if (game->isGameEnd())
 			{
 				game = nullptr;
 				menu = new MenuState();
-			}
-			else if(game->changeState() == 0)
-			{
-				game = nullptr;
 			}
 		}
 		else if (menu != nullptr)
